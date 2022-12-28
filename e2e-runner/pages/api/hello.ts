@@ -9,6 +9,6 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  //localhost:3000/api/hello ==> will respond with :
+  //localhost:3000/api/hello ==> will respond with:
   res.status(200).json({ name: 'John Doe' })
 }

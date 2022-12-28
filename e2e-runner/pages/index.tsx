@@ -16,12 +16,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex w="100vw" alignContent="center" >
-          <Text fontSize="1vw" color="#1F79BA" lineHeight="40px" flexGrow={1}>AT&T E2E Runner</Text>
-          <HStack spacing="1vw">
-            <Text>Test Editor</Text>
-            <Text>Results</Text>
-            <Text >Scheduler</Text>
+      <Flex w="100%" flexDirection="row" alignContent="center" px={5} >
+          <Text fontSize="1.5vw" color="#1F79BA" lineHeight="40px" px={5} >AT&T E2E Runner</Text>
+          <HStack spacing="1vw" alignContent="center" >
+            <Text fontSize="1vw" >Test Editor</Text>
+            <Text fontSize="1vw">Results</Text>
+            <Text fontSize="1vw" >Scheduler</Text>
           </HStack>
       </Flex>
     </>
