@@ -7,21 +7,22 @@ type Data = {
   name: string;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-
   if (req.method !== "POST") {
     res.status(405).send({ message: "Only POST requests allowed" });
     return;
   }
 
-  (async function () {
-    const myFilePath = join(`/Users/mf840u/git/e2eRunner/e2e-runner/`, `specid_${req.query.specid}.txt`);
-    await fs.open(myFilePath, "w");
-    await fs.writeFile(myFilePath, req.body);
-  })();
+  const myFilePath = join(
+    `${__dirname}../../../../../../`,
+    `specid_${req.query.specid}.txt`
+  );
+  console.log("myFilePath:" + myFilePath);
+  await fs.open(myFilePath, "w");
+  await fs.writeFile(myFilePath, req.body);
 
   res.status(200).json(`spec id ${req.query.specid} was saved`);
 }
