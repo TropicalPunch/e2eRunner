@@ -15,7 +15,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   let testDir = serverRuntimeConfig.TEST_PATH;
-  const myFilePath = join(testDir, `specid_${req.query.specid}.txt`);
+  const myFilePath = join(testDir, `${req.query.specid}.spec.ts`);
   switch (req.method) {
     case "GET":
       const data = await fs.readFile(myFilePath, "utf8");
