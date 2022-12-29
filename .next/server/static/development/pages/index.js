@@ -93,10 +93,76 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/NavBar.tsx":
-/*!*******************************!*\
-  !*** ./components/NavBar.tsx ***!
-  \*******************************/
+/***/ "./components/Editor/Editor.tsx":
+/*!**************************************!*\
+  !*** ./components/Editor/Editor.tsx ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _monaco_editor_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @monaco-editor/react */ "@monaco-editor/react");
+/* harmony import */ var _monaco_editor_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_monaco_editor_react__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/os333k/Desktop/innovation-2022/e2eRunner/components/Editor/Editor.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const EditorComponent = () => {
+  const editorRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  function handleEditorDidMount(editor, monaco) {
+    // here is the editor instance
+    // you can store it in `useRef` for further usage
+    console.log("hhh", editor, monaco);
+    editorRef.current = editor;
+  }
+  function handleEditorChange(value, event) {
+    // here is the current value
+    console.log("here is the current model value:", value);
+  }
+  function showValue() {
+    alert(editorRef.current.getValue());
+  }
+  return __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 9
+    }
+  }, __jsx("button", {
+    onClick: showValue,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 13
+    }
+  }, "Show value"), __jsx(_monaco_editor_react__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    height: "80vh",
+    width: "60vw",
+    defaultLanguage: "typescript",
+    defaultValue: "// Enter playWright test scripts!",
+    onMount: handleEditorDidMount,
+    onChange: handleEditorChange,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 13
+    }
+  }));
+};
+/* harmony default export */ __webpack_exports__["default"] = (EditorComponent);
+
+/***/ }),
+
+/***/ "./components/ui-components/NavBar/NavBar.tsx":
+/*!****************************************************!*\
+  !*** ./components/ui-components/NavBar/NavBar.tsx ***!
+  \****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -105,10 +171,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NavBar; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _useOnClickOutside__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useOnClickOutside */ "./components/useOnClickOutside.ts");
+/* harmony import */ var _useOnClickOutside__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../useOnClickOutside */ "./components/useOnClickOutside.ts");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/os333k/Desktop/innovation-2022/e2eRunner/components/NavBar.tsx";
+var _jsxFileName = "/Users/os333k/Desktop/innovation-2022/e2eRunner/components/ui-components/NavBar/NavBar.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -132,7 +198,6 @@ function NavBar() {
   const ref = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   Object(_useOnClickOutside__WEBPACK_IMPORTED_MODULE_1__["default"])(ref, () => setModalOpen(false));
   return __jsx("div", {
-    className: "flex container w-full mx-auto justify-between items-center font-bold text-2xl px-5  py-6",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -148,7 +213,7 @@ function NavBar() {
       columnNumber: 7
     }
   }, __jsx("h1", {
-    className: "h-[3.5rem] flex items-center text-center",
+    className: "",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -156,7 +221,7 @@ function NavBar() {
       columnNumber: 9
     }
   }, "Logo")), __jsx("nav", {
-    className: "hidden md:flex space-x-10 items-center",
+    className: "",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -173,131 +238,15 @@ function NavBar() {
         lineNumber: 36,
         columnNumber: 13
       }
-    }, n.name);
-  })), __jsx("div", {
-    className: "md:hidden",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 7
-    }
-  }, isModalOpen ? __jsx("div", {
-    ref: ref,
-    className: "bg-[#161B21] border-[1px] border-red-100/20  fixed w-[24rem] right-0 top-0 h-[100vh] transition translate-x-[-1px] rounded-lg  text-white",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44,
-      columnNumber: 11
-    }
-  }, __jsx("div", {
-    className: "pt-5 pb-6 px-5",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 13
-    }
-  }, __jsx("button", {
-    onClick: () => setModalOpen(!isModalOpen),
-    className: "-mr-2 float-right mb-3",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 15
-    }
-  }, __jsx("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    fill: "none",
-    stroke: "currentColor",
-    "aria-hidden": "true",
-    className: "h-6 w-6",
-    viewBox: "0 0 24 24",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 17
-    }
-  }, __jsx("path", {
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "2",
-    d: "M6 18L18 6M6 6l12 12",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 19
-    }
-  }))), __jsx("div", {
-    className: "mt-[5rem] z-10 relative",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70,
-      columnNumber: 15
-    }
-  }, __jsx("nav", {
-    className: "grid gap-y-8",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 71,
-      columnNumber: 17
-    }
-  }, navData.map(item => __jsx("a", {
-    key: item.name,
-    href: item.href,
-    className: "-m-3 p-3 flex items-center rounded-md hover:bg-black/20  border-[1px] border-gray-500/60",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 21
-    }
-  }, __jsx("h1", {
-    className: "my-3 ml-3 text-3xl font-bold ",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78,
-      columnNumber: 23
-    }
-  }, item.name))))))) : __jsx("button", {
-    onClick: () => setModalOpen(!isModalOpen),
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 11
-    }
-  }, __jsx("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    className: "h-6 w-6",
-    fill: "white",
-    viewBox: "0 0 24 24",
-    stroke: "currentColor",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89,
-      columnNumber: 13
-    }
-  }, __jsx("path", {
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: 2,
-    d: "M4 6h16M4 12h16m-7 6h7",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96,
-      columnNumber: 15
-    }
-  })))));
+    }, __jsx("a", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 15
+      }
+    }, n.name));
+  })));
 }
 
 /***/ }),
@@ -2541,56 +2490,52 @@ module.exports = ReactPropTypesSecret;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _monaco_editor_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @monaco-editor/react */ "@monaco-editor/react");
-/* harmony import */ var _monaco_editor_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_monaco_editor_react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/NavBar */ "./components/NavBar.tsx");
+/* harmony import */ var _components_ui_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ui-components/NavBar/NavBar */ "./components/ui-components/NavBar/NavBar.tsx");
+/* harmony import */ var _components_Editor_Editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Editor/Editor */ "./components/Editor/Editor.tsx");
+/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/globals.css */ "./styles/globals.css");
+/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_globals_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/os333k/Desktop/innovation-2022/e2eRunner/pages/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const App = () => {
-  const editorRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
-  function handleEditorDidMount(editor, monaco) {
-    // here is the editor instance
-    // you can store it in `useRef` for further usage
-    console.log("hhh", editor, monaco);
-    editorRef.current = editor;
-  }
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 5
-    }
-  }, __jsx(_components_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 10,
       columnNumber: 5
     }
-  }), __jsx("div", {
+  }, __jsx(_components_ui_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 11,
       columnNumber: 5
     }
-  }, __jsx(_monaco_editor_react__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    height: "90vh",
-    defaultLanguage: "javascript",
-    defaultValue: "// Enter playWright test scripts!",
-    onMount: handleEditorDidMount,
+  }), __jsx(_components_Editor_Editor__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
-      columnNumber: 7
+      lineNumber: 12,
+      columnNumber: 5
     }
-  })));
+  }));
 };
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./styles/globals.css":
+/*!****************************!*\
+  !*** ./styles/globals.css ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
