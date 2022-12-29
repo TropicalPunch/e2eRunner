@@ -3,6 +3,7 @@ const withCSS = require("@zeit/next-css");
 const path = require("path");
 
 module.exports = withCSS({
+  cssModules: true,
   serverRuntimeConfig: {
     PROJECT_ROOT: __dirname,
     TEST_PATH: path.join(__dirname, "tests"),

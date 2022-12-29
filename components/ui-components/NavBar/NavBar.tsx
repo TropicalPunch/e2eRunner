@@ -28,7 +28,7 @@ export default function NavBar() {
   return (
     <div>
       <Link href="/">
-        <h1 className="">Logo</h1>
+        <h1 className={styles.navContainer}>Logo</h1>
       </Link>
       <nav className="">
         {navData.map((n) => {
