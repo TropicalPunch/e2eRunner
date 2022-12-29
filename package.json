@@ -9,17 +9,23 @@
   },
   "main": "pages/index.tsx",
   "dependencies": {
-    "@types/node": "12.11.7",
+    "@monaco-editor/react": "4.0.4",
+    "@playwright/test": "^1.29.1",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
     "@zeit/next-css": "1.0.1",
+    "dotenv": "^16.0.3",
     "next": "9.1.1",
     "react": "latest",
     "react-dom": "latest",
     "typescript": "3.6.4",
-    "@monaco-editor/react": "4.0.4"
+    "uuid": "^9.0.0"
   },
   "license": "ISC",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/uuid": "^9.0.0"
+  }
 }
