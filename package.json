@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "docker_build": "docker build -t aoflow.azurecr.io/e2e-test-runner-engine ."
+    "docker:build": "docker build -t aoflow.azurecr.io/e2e-test-runner-engine .",
+    "docker:push": "docker push aoflow.azurecr.io/e2e-test-runner-engine:latest"
   },
   "main": "pages/index.tsx",
   "dependencies": {

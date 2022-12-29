@@ -1,6 +1,7 @@
 # FIXME: this Dockerfile is not even close to OK or anything
 FROM aoflow.azurecr.io/node:16-alpine
 
+RUN apk add --no-cache bash
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
@@ -10,8 +11,6 @@ RUN npm run build
 
 RUN npm prune --production
 
-EXPOSE 3000
+EXPOSE 1880
 
-ENV PORT 3000
-
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start", "--", "-p", "1880"]
