@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect } from 'react';
+import { useEffect } from 'react';
 
 // https://usehooks.com/useOnClickOutside/
 

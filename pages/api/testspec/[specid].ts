@@ -19,11 +19,11 @@ export default async function handler(
   switch (req.method) {
     case "GET":
       const data = await fs.readFile(myFilePath, "utf8");
-      res.status(200).send({ message: data.toString() });
+      res.status(200).send({ message: data.toString() } as any);
       break;
     default:
       await fs.open(myFilePath, "w");
       await fs.writeFile(myFilePath, req.body);
-      res.status(200).json(`spec id ${req.query.specid} was saved`);
+      res.status(200).json(`spec id ${req.query.specid} was saved` as any);
   }
 }

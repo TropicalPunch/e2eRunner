@@ -56,7 +56,7 @@ async function runPlaywright(opt: TestRunnerOptions) {
         });
 
         child.stdout.setEncoding('utf8');
-        child.on('close', function (code) { // Should probably be 'exit', not 'close'
+        child.on('close', function (_code) { // Should probably be 'exit', not 'close'
             // if code !== 0 test failed
             resolve(scriptOutput);
         });
