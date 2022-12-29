@@ -4,6 +4,6 @@ playwright
 # nextJS
 -npm run dev  
 
-# chakre ui
-https://chakra-ui.com/getting-started
-https://chakra-ui.com/getting-started/nextjs-guide
+
+#react monaco editor
+npm i monaco-editor-webpack-plugin @zeit/next-css react-monaco-editor
