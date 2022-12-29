@@ -6,24 +6,29 @@ import { join } from "path";
 
 const { serverRuntimeConfig } = getConfig();
 
-type Data = {
-  name: string;
-};
-
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse,
 ) {
   let testDir = serverRuntimeConfig.TEST_PATH;
-  const myFilePath = join(testDir, `specid_${req.query.specid}.txt`);
+  const myFilePath = join(testDir, `${req.query.specid}.spec.ts`);
+
   switch (req.method) {
     case "GET":
       const data = await fs.readFile(myFilePath, "utf8");
-      res.status(200).send({ message: data.toString() } as any);
+      res.status(200).send(data);
       break;
-    default:
-      await fs.open(myFilePath, "w");
+    case "POST":
+    case "PUT":
       await fs.writeFile(myFilePath, req.body);
-      res.status(200).json(`spec id ${req.query.specid} was saved` as any);
+      res.status(200).json({ message: `spec id ${req.query.specid} was saved` });
+      break;
+    case "DELETE":
+      res.status(200).json({ message: `spec id ${req.query.specid} was deleted` });
+      await fs.rm(myFilePath);
+      break;
+
+    default:
+      res.status(400).json({ message: "method not supported" });
   }
 }
