@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "docker_build": "docker build -t aoflow.azurecr.io/e2e-test-runner-engine ."
   },
   "main": "pages/index.tsx",
   "dependencies": {
@@ -18,7 +19,7 @@
     "next": "9.1.1",
     "react": "latest",
     "react-dom": "latest",
-    "typescript": "3.6.4",
+    "typescript": "^3.9.0",
     "uuid": "^9.0.0"
   },
   "license": "ISC",

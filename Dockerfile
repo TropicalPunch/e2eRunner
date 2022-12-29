@@ -1,5 +1,5 @@
 # FIXME: this Dockerfile is not even close to OK or anything
-FROM node:16-alpine
+FROM aoflow.azurecr.io/node:16-alpine
 
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
