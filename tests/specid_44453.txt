@@ -1,2 +1,2 @@
 spec spec spec spec
-spec spec spec s
+spec spec spec spec
